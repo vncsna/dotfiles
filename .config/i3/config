@@ -2,7 +2,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod1
+set $mod Mod4
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -151,8 +151,8 @@ set $ws7 7
 set $ws8 8
 
 # set workspace monitor
-workspace $ws1 output primary
-workspace $ws2 output primary
+# workspace $ws1 output primary
+# workspace $ws2 output primary
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -185,8 +185,8 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="discord"] $ws1
-assign [class="TelegramDesktop"] $ws1
+# assign [class="discord"] $ws1
+# assign [class="TelegramDesktop"] $ws1
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
@@ -423,8 +423,5 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# init redshift
-exec --no-startup-id redshift-gtk
-
-# init second monitor
-exec --no-startup-id /home/vncsna/.config/i3/init_monitor.sh
+# start second monitor
+exec_always --no-startup-id /home/vncsna/.config/i3/monitor.sh
