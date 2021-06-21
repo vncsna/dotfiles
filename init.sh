@@ -1,10 +1,6 @@
 #!/bin/bash -l
 set -euxo pipefail
 
-# ----------------------------------------
-# MORE OR LESS MANUAL
-# ----------------------------------------
-
 # install manjaro i3 full
 # https://manjaro.org/downloads/community/i3/
 
@@ -12,29 +8,30 @@ set -euxo pipefail
 chsh -s /bin/zsh
 
 # install apps with yay
+yay calibre
 yay discord
 yay docker
 yay docker-compose
-yay google-chrome-stable
+yay google-chrome
 yay okular
 yay redshift
 yay slack-desktop
 yay steam-manjaro
 yay stremio
 yay telegram-desktop
+yay virtualbox # community
 yay zotero
-
-# configure (manual) redshift
-# https://wiki.archlinux.org/title/redshift
 
 # install asdf manager
 # https://asdf-vm.com/#/core-manage-asdf
 
 # install onivim2
-# https://onivim.io/
+# https://onivim.io/early-access-portal
 
-# add hide bar to i3
-# add onivim2 shortcut to i3
+# configure asdf
+# https://asdf-vm.com/#/core-manage-plugins
 
-# add opacity to picom
-# https://wiki.archlinux.org/title/Picom#Opacity
+# configure redshift
+# https://wiki.archlinux.org/title/redshift
+
+# copy config files
