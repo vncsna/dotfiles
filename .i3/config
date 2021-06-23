@@ -424,4 +424,4 @@ mode "$mode_gaps_outer" {
 }
 
 # start second monitor
-exec_always --no-startup-id /home/vncsna/.config/i3/monitor.sh
+exec_always --no-startup-id ~/.i3/monitor.sh
