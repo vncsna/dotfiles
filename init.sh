@@ -20,6 +20,8 @@ yay steam-manjaro
 yay stremio
 yay telegram-desktop
 yay virtualbox # community
+yay virtualbox-ext-oracle
+yay virtualbox-guest-iso
 yay zotero
 
 # install asdf manager
