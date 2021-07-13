@@ -1,39 +1,41 @@
 #!/bin/bash -l
 set -euxo pipefail
 
-# install manjaro i3 full
+# INSTALL MANJARO I3 MINIMAL ---------------------
 # https://manjaro.org/downloads/community/i3/
 
-# set zsh as default shell
-chsh -s /bin/zsh
+# INSTALL APPS -----------------------------------
+# pacman -S calibre
+# pacman -S discord
+# pacman -S docker
+# pacman -S docker-compose
+# pacman -S google-chrome
+# pacman -S okular
+# pacman -S redshift
+# pacman -S slack-desktop
+# pacman -S steam-manjaro
+# pacman -S stremio
+# pacman -S telegram-desktop
+# pacman -S virtualbox # community
+# pacman -S virtualbox-ext-oracle
+# pacman -S virtualbox-guest-iso
+# pacman -S zotero
 
-# install apps with yay
-yay calibre
-yay discord
-yay docker
-yay docker-compose
-yay google-chrome
-yay okular
-yay redshift
-yay slack-desktop
-yay steam-manjaro
-yay stremio
-yay telegram-desktop
-yay virtualbox # community
-yay virtualbox-ext-oracle
-yay virtualbox-guest-iso
-yay zotero
-
-# install asdf manager
+# INSTALL ASDF MANAGER ---------------------------
 # https://asdf-vm.com/#/core-manage-asdf
-
-# install onivim2
-# https://onivim.io/early-access-portal
-
-# configure asdf
 # https://asdf-vm.com/#/core-manage-plugins
 
-# configure redshift
-# https://wiki.archlinux.org/title/redshift
+# SET ZSH AS DEFAULT SHELL -----------------------
+# chsh -s /bin/zsh
 
-# copy config files
+# COPY CONFIG FILES ------------------------------
+
+# CONFIGURE DOCKER TO START ON BOOT --------------
+# sudo systemctl enable docker.service
+# sudo systemctl enable containerd.service
+
+# CONFIGURE BLUETOOTH TO START ON BOOT -----------
+# sudo systemctl enable bluetooth.service
+
+# CONFIGURE GIT TO STORE CREDENTIALS -------------
+# git config --global credential.helper store
