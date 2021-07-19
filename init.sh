@@ -10,6 +10,7 @@ set -euxo pipefail
 # pacman -S docker
 # pacman -S docker-compose
 # pacman -S google-chrome
+# pacman -S noto-fonts-emoji
 # pacman -S okular
 # pacman -S redshift
 # pacman -S slack-desktop
