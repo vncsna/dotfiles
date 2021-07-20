@@ -151,8 +151,8 @@ set $ws7 7
 set $ws8 8
 
 # set workspace monitor
-# workspace $ws1 output primary
-# workspace $ws2 output primary
+workspace $ws1 output primary
+workspace $ws2 output primary
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
