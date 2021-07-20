@@ -20,6 +20,7 @@ set -euxo pipefail
 # pacman -S virtualbox # community
 # pacman -S virtualbox-ext-oracle
 # pacman -S virtualbox-guest-iso
+# pacman -S xarchiver
 # pacman -S zotero
 
 # INSTALL ASDF MANAGER ---------------------------
