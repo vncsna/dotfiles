@@ -1,3 +1,7 @@
+############################################################
+# Zsh with Oh-My-Zsh #######################################
+############################################################
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +12,7 @@ export ZSH="/home/vncsna/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=bira
+ZSH_THEME=af-magic
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,17 +75,16 @@ ZSH_THEME=bira
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    autojump
     asdf
-    git
     sudo
-    zsh-autosuggestions
 )
 
 # Source Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
-# User configuration 
+############################################################
+# User Configuration #######################################
+############################################################
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -98,6 +101,12 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export NODE_OPTIONS="--experimental-repl-await"
+
+############################################################
+# Alias ####################################################
+############################################################
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -107,5 +116,36 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Source Zsh Syntax Highlighting
+############################################################
+# Functions ################################################
+############################################################
+
+function loadenv() {
+  if [[ $# -eq 1 ]]; then
+    set -a
+    source "$1"
+    set +a
+  else
+    echo "Number of parameters should be 1"
+  fi
+}
+
+############################################################
+# Google Cloud SDK #########################################
+############################################################
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/vncsna/.google-cloud-sdk/path.zsh.inc' ]; then
+  . '/home/vncsna/.google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/vncsna/.google-cloud-sdk/completion.zsh.inc' ]; then
+  . '/home/vncsna/.google-cloud-sdk/completion.zsh.inc'
+fi
+
+############################################################
+# Zsh Syntax Highlighting (Maintain at the end of the file)#
+############################################################
+
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
