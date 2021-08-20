@@ -4,6 +4,10 @@ set -euxo pipefail
 xrandr | grep "HDMI-1-0 connected" && xrandr --output HDMI-1-0 --auto --mode 1920x1080 --right-of eDP-1
 
 # ----------------------------------------------------------
+# Use this script line to change the primary monitor
+# xrandr --output HDMI-1-0 --primary --right-of eDP-1
+
+# ----------------------------------------------------------
 # NVIDIA sound driver has a problem on 27.06.2021 according to this discussion
 # https://forum.manjaro.org/t/no-sound-over-hdmi-after-nvidia-driver-update/23729/14
 #
