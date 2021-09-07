@@ -1,7 +1,3 @@
-############################################################
-# Zsh with Oh-My-Zsh #######################################
-############################################################
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -12,7 +8,7 @@ export ZSH="/home/vncsna/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=af-magic
+ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -75,16 +71,13 @@ ZSH_THEME=af-magic
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    asdf
-    sudo
+	git
+	asdf
 )
 
-# Source Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
-############################################################
-# User Configuration #######################################
-############################################################
+# User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -101,12 +94,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export NODE_OPTIONS="--experimental-repl-await"
-
-############################################################
-# Alias ####################################################
-############################################################
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -116,10 +103,14 @@ export NODE_OPTIONS="--experimental-repl-await"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-############################################################
-# Functions ################################################
-############################################################
+###########################################################
+# Personal Configuration ##################################
+###########################################################
 
+# Enable await on node repl
+export NODE_OPTIONS="--experimental-repl-await"
+
+# Function to load environment variables
 function loadenv() {
   if [[ $# -eq 1 ]]; then
     set -a
@@ -130,22 +121,8 @@ function loadenv() {
   fi
 }
 
-############################################################
-# Google Cloud SDK #########################################
-############################################################
+###########################################################
+# Zsh Syntax Highlightning ################################
+###########################################################
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/vncsna/.google-cloud-sdk/path.zsh.inc' ]; then
-  . '/home/vncsna/.google-cloud-sdk/path.zsh.inc'
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/vncsna/.google-cloud-sdk/completion.zsh.inc' ]; then
-  . '/home/vncsna/.google-cloud-sdk/completion.zsh.inc'
-fi
-
-############################################################
-# Zsh Syntax Highlighting (Maintain at the end of the file)#
-############################################################
-
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
