@@ -35,6 +35,10 @@ set -euxo pipefail
 # CONFIGURE GIT TO STORE CREDENTIALS ------------
 # git config --global credential.helper store
 
+# CONFIGURE GITHUB NPM REGISTRY -----------------
+# create a .npmrc file with
+# //npm.pkg.github.com/:_authToken={{TOKEN}}
+
 # CONFIGURE DOCKER TO START ON BOOT -------------
 # sudo systemctl enable docker.service
 # sudo systemctl enable containerd.service
