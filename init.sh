@@ -9,13 +9,13 @@ set -euxo pipefail
 
 # INSTALL APPS ----------------------------------
 # pacman -S calibre
-# pacman -S discord
+# pacman -S discord_arch_electron
 # pacman -S docker
 # pacman -S docker-compose
 # pacman -S google-chrome
 # pacman -S okular
 # pacman -S redshift
-# pacman -S slack-desktop
+# pacman -S slack-wayland
 # pacman -S stremio
 # pacman -S telegram-desktop
 # pacman -S visual-studio-code-bin
