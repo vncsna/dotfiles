@@ -1,24 +1,26 @@
 #!/bin/bash -l
-set -euxo pipefail
+# set -euxo pipefail
 
 # INSTALL MANJARO SWAY --------------------------
 # https://github.com/Manjaro-Sway/manjaro-sway
 
-# TRUST BLUETOOTH DEVICES -----------------------
-# COPY CONFIG FILES -----------------------------
+# SETUP BLUETOOTH DEVICES -----------------------
 
 # INSTALL APPS ----------------------------------
 # pacman -S calibre
 # pacman -S discord_arch_electron
 # pacman -S docker
 # pacman -S docker-compose
+# pacman -S emacs
 # pacman -S google-chrome
+# pacman -S neovim
+# pacman -S noto-fonts # add cjk and extras
+# pacman -S noto-fonts-emoji
 # pacman -S okular
 # pacman -S redshift
 # pacman -S slack-wayland
 # pacman -S stremio
 # pacman -S telegram-desktop
-# pacman -S visual-studio-code-bin
 # pacman -S xarchiver
 # pacman -S zotero
 
@@ -32,13 +34,14 @@ set -euxo pipefail
 # https://asdf-vm.com/#/core-manage-asdf
 # https://asdf-vm.com/#/core-manage-plugins
 
-# CONFIGURE GIT TO STORE CREDENTIALS ------------
+# COPY SETUP FILES ------------------------------
+
+# SETUP GIT TO STORE CREDENTIALS ----------------
 # git config --global credential.helper store
 
-# CONFIGURE GITHUB NPM REGISTRY -----------------
-# create a .npmrc file with
-# //npm.pkg.github.com/:_authToken={{TOKEN}}
+# SETUP NPM PKG REGISTRY AUTH TOKEN -------------
+# npm config set //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
 
-# CONFIGURE DOCKER TO START ON BOOT -------------
+# SETUP DOCKER TO START ON BOOT -----------------
 # sudo systemctl enable docker.service
 # sudo systemctl enable containerd.service

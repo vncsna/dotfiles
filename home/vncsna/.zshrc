@@ -71,8 +71,9 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
 	asdf
+	git
+	sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # Enable await on node repl
 export NODE_OPTIONS="--experimental-repl-await"
 
-# Function to load environment variables
+# Load environment variables
 function loadenv() {
   if [[ $# -eq 1 ]]; then
     set -a
@@ -119,6 +120,11 @@ function loadenv() {
   else
     echo "Number of parameters should be 1"
   fi
+}
+
+# Remove nvim swap files
+function cleanswap() {
+  rm -rf ~/.local/share/nvim/swap/*
 }
 
 ###########################################################
