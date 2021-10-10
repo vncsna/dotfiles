@@ -1,7 +1,3 @@
--- By default title is off.
--- Needed for detecting window
--- as neovim instance (sworkstyle)
-
 -------------------------------------------------
 -- nvim
 -------------------------------------------------
@@ -13,6 +9,16 @@ local map = vim.api.nvim_set_keymap
 
 -- map leader key to ,
 g.mapleader = ','
+
+-- map tab size to 2
+cmd [[
+  set autoindent
+  set expandtab
+  set tabstop=2
+  set smartindent
+  set softtabstop=2
+  set shiftwidth=2
+]]
 
 -- map copy to clipboard
 map('v', '<leader>y', 'y', {noremap = true})
@@ -33,29 +39,21 @@ map('n', '<leader>P', '"+P', {noremap = true})
 map('t', '<Esc>', '<C-\\><C-n>', {noremap = true}) 
 
 -------------------------------------------------
--- nvim.packer
+-- nvim plugins
 -------------------------------------------------
 
 require('plugins')
 
-require('lsp')
+-- npm i -g pyright
+require'lspconfig'.pyright.setup{}
 
-require('telescope').setup {
-  defaults = { file_ignore_patterns = {"node_modules"} }
-}
+-- npm install -g typescript typescript-language-server
+require'lspconfig'.tsserver.setup{}
 
--- automatically run :PackerCompile when changed
-cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
--------------------------------------------------
+------------------------------------------------
 -- references
 -------------------------------------------------
-
 -- https://github.com/wbthomason/packer.nvim
 -- https://github.com/nanotee/nvim-lua-guide
 -- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua
+
