@@ -7,7 +7,8 @@
 # SETUP BLUETOOTH DEVICES -----------------------
 
 # INSTALL APPS ----------------------------------
-# pacman -S calibre
+# pacman -S base-devel
+# pacman -S calibre-git
 # pacman -S discord_arch_electron
 # pacman -S docker
 # pacman -S docker-compose
@@ -16,8 +17,9 @@
 # pacman -S neovim
 # pacman -S noto-fonts # add cjk and extras
 # pacman -S noto-fonts-emoji
+# pacman -S nvim-packer-git
 # pacman -S okular
-# pacman -S redshift
+# pacman -S ranger
 # pacman -S slack-wayland
 # pacman -S stremio
 # pacman -S telegram-desktop
@@ -35,6 +37,9 @@
 # https://asdf-vm.com/#/core-manage-plugins
 
 # COPY SETUP FILES ------------------------------
+
+# SETUP SPACEMACS -------------------------------
+# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # SETUP GIT TO STORE CREDENTIALS ----------------
 # git config --global credential.helper store
