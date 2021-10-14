@@ -4,8 +4,6 @@
 # INSTALL MANJARO SWAY --------------------------
 # https://github.com/Manjaro-Sway/manjaro-sway
 
-# SETUP BLUETOOTH DEVICES -----------------------
-
 # INSTALL APPS ----------------------------------
 # pacman -S base-devel
 # pacman -S calibre-git
@@ -14,10 +12,8 @@
 # pacman -S docker-compose
 # pacman -S emacs
 # pacman -S google-chrome
-# pacman -S neovim
 # pacman -S noto-fonts # add cjk and extras
 # pacman -S noto-fonts-emoji
-# pacman -S nvim-packer-git
 # pacman -S okular
 # pacman -S ranger
 # pacman -S slack-wayland
@@ -36,7 +32,14 @@
 # https://asdf-vm.com/#/core-manage-asdf
 # https://asdf-vm.com/#/core-manage-plugins
 
-# COPY SETUP FILES ------------------------------
+# INSTALL EB CLI --------------------------------
+# pip install awsebcli --upgrade --user
+
+# SETUP BLUETOOTH DEVICES -----------------------
+
+# SETUP NEOVIM ----------------------------------
+# Install Neovim Nightly from
+# https://github.com/neovim/neovim/actions/workflows/release.yml
 
 # SETUP SPACEMACS -------------------------------
 # git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
@@ -50,3 +53,5 @@
 # SETUP DOCKER TO START ON BOOT -----------------
 # sudo systemctl enable docker.service
 # sudo systemctl enable containerd.service
+
+# COPY SETUP FILES ------------------------------
