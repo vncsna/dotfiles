@@ -10,7 +10,6 @@
 # pacman -S discord_arch_electron
 # pacman -S docker
 # pacman -S docker-compose
-# pacman -S emacs
 # pacman -S google-chrome
 # pacman -S noto-fonts # add cjk and extras
 # pacman -S noto-fonts-emoji
@@ -40,9 +39,6 @@
 # SETUP NEOVIM ----------------------------------
 # Install Neovim Nightly from
 # https://github.com/neovim/neovim/actions/workflows/release.yml
-
-# SETUP SPACEMACS -------------------------------
-# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # SETUP GIT TO STORE CREDENTIALS ----------------
 # git config --global credential.helper store
