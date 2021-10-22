@@ -7,12 +7,13 @@
 -- Vim config ---------------------------------------------
 -----------------------------------------------------------
 
--- alias
-local cmd = vim.cmd
-local map = vim.api.nvim_set_keymap
+-- map leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 
 -- map tab size to 2
-cmd [[
+vim.cmd [[
   set autoindent
   set expandtab
   set tabstop=2
@@ -22,22 +23,22 @@ cmd [[
 ]]
 
 -- map copy to clipboard
-map('v', '<leader>y', 'y', {noremap = true})
-map('v', '<leader>y', '"+y', {noremap = true})
-map('n', '<leader>y', 'y', {noremap = true})
-map('n', '<leader>y', '"+y', {noremap = true})
-map('n', '<leader>Y', '"+yg_', {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>y', 'y', {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>y', 'y', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>Y', '"+yg_', {noremap = true})
 
 -- map paste to clipboard
-map('v', '<leader>p', 'p', {noremap = true})
-map('v', '<leader>p', '"+p', {noremap = true})
-map('v', '<leader>P', '"+P', {noremap = true})
-map('n', '<leader>p', 'p', {noremap = true})
-map('n', '<leader>p', '"+p', {noremap = true})
-map('n', '<leader>P', '"+P', {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>p', 'p', {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>p', '"+p', {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>P', '"+P', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>p', 'p', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>p', '"+p', {noremap = true})
+vim.api.nvim_set_keymap('', '<leader>P', '"+P', {noremap = true})
 
 -- map escape to terminal mode escape
-map('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
 
 -----------------------------------------------------------
 -----------------------------------------------------------
@@ -56,7 +57,7 @@ vim.api.nvim_exec(
     autocmd!
     autocmd BufWritePost init.lua PackerCompile
   augroup end
-]],
+  ]],
   false
 )
 
@@ -88,7 +89,7 @@ require('packer').startup(function()
   -----------------------------------------------------------
   -- Packer config ------------------------------------------
   -----------------------------------------------------------
-  
+
   -- Install gutentags dependencies
   -- pacman -S ctags
 
@@ -96,11 +97,11 @@ require('packer').startup(function()
   -- pacman -S fd
   -- pacman -S ripgrep
 
+  -- Add toggleterm support
+  use 'akinsho/toggleterm.nvim'
+
   -- Add editor config support
   use 'editorconfig/editorconfig-vim'
-
-  -- Add lazygit support
-  use 'kdheepak/lazygit.nvim'
 
   -----------------------------------------------------------
   -----------------------------------------------------------
@@ -149,9 +150,9 @@ vim.g.lightline = {
 }
 
 --Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+-- vim.g.mapleader = ' '
+-- vim.g.maplocalleader = ' '
 
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
@@ -164,7 +165,7 @@ vim.api.nvim_exec(
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]],
+  ]],
   false
 )
 
@@ -202,7 +203,7 @@ require('telescope').setup {
 }
 --Add leader shortcuts
 vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
@@ -394,6 +395,81 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-----------------------------------------------------------
+-- Toggleterm config --------------------------------------
+-----------------------------------------------------------
+
+require("toggleterm").setup{
+  -- size can be a number or function which is passed the current terminal
+  size = function(term)
+    if term.direction == "horizontal" then
+      return 15
+    elseif term.direction == "vertical" then
+      return vim.o.columns * 0.4
+    end
+  end,
+  open_mapping = '<leader>z',
+    hide_numbers = true, -- hide the number column in toggleterm buffers
+    shade_filetypes = {},
+    shade_terminals = true,
+    shading_factor = 1, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+    start_in_insert = true, -- will slow down the space key (leader) in insert mode
+    insert_mappings = false, -- whether or not the open mapping applies in insert mode
+    persist_size = true,
+    direction = 'horizontal', -- 'vertical' | 'horizontal' | 'float',
+    close_on_exit = true, -- close the terminal window when the process exits
+    shell = vim.o.shell, -- change the default shell
+    -- This field is only relevant if direction is set to 'float'
+    float_opts = {
+      -- The border key is *almost* the same as 'nvim_open_win'
+      -- see :h nvim_open_win for details on borders however
+      -- the 'curved' border is a custom border type
+      -- not natively supported but implemented in this plugin.
+      border = 'single', -- | 'double' | 'shadow' | 'curved',
+      -- width = <value>,
+      -- height = <value>,
+      winblend = 3,
+      highlights = {
+        border = "Normal",
+        background = "Normal",
+      }
+    }
+}
+
+-- setup terminal window mappings
+function _G.set_terminal_keymaps()
+  local opts = {noremap = true}
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+-- setup lazygit on a floating terminal
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  direction = "float",
+  hidden = true
+})
+
+function _G._lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap(
+  "n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>",
+  {noremap = true, silent = true}
+)
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
 
 -----------------------------------------------------------
 -- Language servers config --------------------------------
