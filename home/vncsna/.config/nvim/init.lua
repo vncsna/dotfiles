@@ -12,9 +12,6 @@ local g = vim.g
 local cmd = vim.cmd
 local map = vim.api.nvim_set_keymap
 
--- map leader key to ,
-g.mapleader = ','
-
 -- map tab size to 2
 cmd [[
   set autoindent
