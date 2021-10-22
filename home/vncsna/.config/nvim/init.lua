@@ -8,7 +8,6 @@
 -----------------------------------------------------------
 
 -- alias
-local g = vim.g
 local cmd = vim.cmd
 local map = vim.api.nvim_set_keymap
 
@@ -38,7 +37,7 @@ map('n', '<leader>p', '"+p', {noremap = true})
 map('n', '<leader>P', '"+P', {noremap = true})
 
 -- map escape to terminal mode escape
-map('t', '<Esc>', '<C-\\><C-n>', {noremap = true}) 
+map('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
 
 -----------------------------------------------------------
 -----------------------------------------------------------
@@ -273,7 +272,7 @@ local on_attach = function(_, bufnr)
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
-  
+
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
