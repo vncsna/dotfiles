@@ -4,22 +4,24 @@
 # INSTALL MANJARO SWAY --------------------------
 # https://github.com/Manjaro-Sway/manjaro-sway
 
+# SETUP BLUETOOTH DEVICES -----------------------
+
 # INSTALL APPS ----------------------------------
-# pacman -S base-devel
-# pacman -S calibre-git
-# pacman -S docker
-# pacman -S docker-compose
-# pacman -S google-chrome
-# pacman -S noto-fonts
-# pacman -S noto-fonts-cjk
-# pacman -S noto-fonts-emoji
-# pacman -S noto-fonts-extra
-# pacman -S okular
-# pacman -S ranger
-# pacman -S stremio
-# pacman -S telegram-desktop
-# pacman -S xarchiver
-# pacman -S zotero
+# yay -S calibre
+# yay -S docker
+# yay -S docker-compose
+# yay -S discord
+# yay -S google-chrome
+# yay -S noto-fonts
+# yay -S noto-fonts-cjk
+# yay -S noto-fonts-emoji
+# yay -S noto-fonts-extra
+# yay -S okular
+# yay -S ranger
+# yay _S slack-desktop
+# yay -S stremio
+# yay -S telegram-desktop
+# yay -S zotero
 
 # INSTALL OH-MY-ZSH -----------------------------
 # https://github.com/ohmyzsh/ohmyzsh
@@ -34,11 +36,11 @@
 # INSTALL EB CLI --------------------------------
 # pip install awsebcli --upgrade --user
 
-# SETUP BLUETOOTH DEVICES -----------------------
-
 # SETUP NEOVIM ----------------------------------
-# Install Neovim Nightly from
-# https://github.com/neovim/neovim/actions/workflows/release.yml
+# https://github.com/neovim/neovim
+
+# SETUP SPACEMACS -------------------------------
+# https://www.spacemacs.org
 
 # SETUP GIT TO STORE CREDENTIALS ----------------
 # git config --global credential.helper store
@@ -51,3 +53,6 @@
 # sudo systemctl enable containerd.service
 
 # COPY SETUP FILES ------------------------------
+
+# SETUP GTK2 THEME ON QT5CT ---------------------
+# UNINSTALL FLASHFOCUS --------------------------
