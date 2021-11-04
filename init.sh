@@ -8,8 +8,10 @@
 
 # INSTALL APPS ----------------------------------
 # yay -S calibre
+# yay -S ctags
 # yay -S docker
 # yay -S docker-compose
+# yay -S emacs
 # yay -S discord
 # yay -S google-chrome
 # yay -S noto-fonts
@@ -17,6 +19,7 @@
 # yay -S noto-fonts-emoji
 # yay -S noto-fonts-extra
 # yay -S okular
+# yay -S qt5-styleplugins
 # yay -S ranger
 # yay -S slack-desktop
 # yay -S stremio
@@ -49,8 +52,8 @@
 # npm config set //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
 
 # SETUP DOCKER TO START ON BOOT -----------------
-# sudo systemctl enable docker.service
-# sudo systemctl enable containerd.service
+# systemctl enable docker.service
+# systemctl enable containerd.service
 
 # COPY SETUP FILES ------------------------------
 
