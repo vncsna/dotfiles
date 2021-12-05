@@ -1,5 +1,5 @@
+qt5-styleplugins
 oh-my-zsh-git
-slack-desktop
 stremio
 visual-studio-code-bin
 zotero
