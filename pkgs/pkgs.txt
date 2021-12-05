@@ -2,6 +2,7 @@ arc-solid-gtk-theme
 base-devel
 bluez
 bluez-utils
+brightnessctl
 calibre
 ctags
 docker
