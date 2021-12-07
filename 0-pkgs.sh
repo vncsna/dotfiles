@@ -19,10 +19,9 @@ export -f install
 export -f install_aur
 export -f install_flatpak
 
-xargs -a pkgs.txt -I {} bash -c 'install "{}"'
-xargs -a pkgs.aur.txt -I {} bash -c 'install_aur "{}"'
-xargs -a pkgs.flatpak.txt -I {} bash -c 'install_flatpak "{}"'
+xargs -a pkgs/off.txt -I {} bash -c 'install "{}"'
+xargs -a pkgs/aur.txt -I {} bash -c 'install_aur "{}"'
+xargs -a pkgs/flatpak.txt -I {} bash -c 'install_flatpak "{}"'
 
 # Reference
 # https://stackoverflow.com/questions/11003418/calling-shell-functions-with-xargs
-

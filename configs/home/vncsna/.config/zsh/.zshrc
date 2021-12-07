@@ -126,6 +126,13 @@ function cleanswap() {
   rm -rf ~/.local/share/nvim/swap/*
 }
 
+# Install aur package
+function install_aur() {
+  sudo -u vncsna git clone https://aur.archlinux.org/$1.git
+  (cd $1 && sudo -u vncsna makepkg -si --needed --noconfirm)
+  rm -rf $1
+}
+
 ###########################################################
 # Zsh Syntax Highlightning ################################
 ###########################################################

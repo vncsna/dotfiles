@@ -15,18 +15,20 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term alacritty
+set $term_float alacritty \
+  --title 'launcher'\
+  --config-file ~/.config/allacrity/launcher.yml
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $launcher dmenu_path | fzf | xargs swaymsg exec
-set $menu alacritty \
-  --config-file ~/.config/allacrity/launcher.yml\
-  --title 'launcher' --command sh -c \'$launcher\'
+set $menu $term_float --command zsh -c \'$launcher\'
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg "./wallpapers/dark/1920x1080-dark-archlinux.png" fill
 #
 # Example configuration:
 #
@@ -204,18 +206,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    mode hide
-    position bottom
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 include ./config.d/*
