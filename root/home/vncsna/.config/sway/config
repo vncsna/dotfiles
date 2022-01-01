@@ -17,18 +17,20 @@ set $right l
 set $term alacritty
 set $term_float alacritty \
   --title 'launcher'\
-  --config-file ~/.config/allacrity/launcher.yml
+  --command
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $launcher dmenu_path | fzf | xargs swaymsg exec
-set $menu $term_float --command zsh -c \'$launcher\'
+set $menu $term_float zsh -c \'$launcher\'
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg "./wallpapers/dark/1920x1080-dark-archlinux.png" fill
+set $wallpapers $HOME/.config/sway/wallpapers
+output * bg `find $wallpapers -type f | shuf -n 1` fill
+
 #
 # Example configuration:
 #

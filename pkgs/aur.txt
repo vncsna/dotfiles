@@ -1,7 +1,0 @@
-insomnia
-nerd-fonts-roboto-mono
-oh-my-zsh-git
-qt5-styleplugins
-stremio
-visual-studio-code-bin
-zotero

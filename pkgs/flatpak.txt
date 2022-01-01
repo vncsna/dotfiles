@@ -1,2 +1,0 @@
-com.discordapp.Discord
-com.slack.Slack

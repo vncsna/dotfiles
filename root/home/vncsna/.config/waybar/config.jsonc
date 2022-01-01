@@ -11,32 +11,33 @@
     // Global configuration
     // -------------------------------------------------------------------------
 
-    "layer": "top",
-
-    // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+    "height": 28,
+    "layer": "bottom",
     "position": "bottom",
 
-    "modules-left": ["custom/menu", "sway/workspaces", "custom/scratchpad"],
-    "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather"],
+    "modules-left": [
+      "custom/menu",
+      "sway/workspaces",
+      "custom/scratchpad"
+    ],
+    "modules-center": [
+      "custom/wf-recorder",
+      "sway/mode"
+    ],
     "modules-right": [
         // informational
-        "custom/github",
-        "custom/clipboard",
         "cpu",
         "memory",
-        "battery",
         "temperature",
+        "battery",
 
         // connecting
-        "network",
         "bluetooth",
+        "network",
 
         // media
         "custom/playerctl",
-        "idle_inhibitor",
         "pulseaudio",
-        "backlight",
 
         // system
         "custom/sunset",
@@ -97,7 +98,7 @@
         "format-ethernet": "",
         "format-disconnected": "睊",
         "tooltip-format": "{ifname} ({essid}): {ipaddr}",
-        "on-click": "swaymsg exec \\$term nmtui"
+        "on-click": "swaymsg exec \"alacritty --title 'launcher' -e nmtui\""
     },
 
     "sway/mode": {

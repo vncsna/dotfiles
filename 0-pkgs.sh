@@ -1,27 +1,73 @@
-#!/bin/bash -l
+#!/bin/zsh -l
 set -euxo pipefail
 
-function install() {
-  pacman -S --needed --noconfirm $1
-}
+######################################
+# Packages
+######################################
 
-function install_aur() {
-  sudo -u vncsna git clone https://aur.archlinux.org/$1.git
-  (cd $1 && sudo -u vncsna makepkg -si --needed --noconfirm)
-  rm -rf $1
-}
+for pkg in \
+    "aws-cli" \
+    "base-devel" \
+    "blueberry" \
+    "bluez" \
+    "bluez-utils" \
+    "brightnessctl" \
+    "calibre" \
+    "ctags" \
+    "docker" \
+    "docker-compose" \
+    "file-roller" \
+    "git" \
+    "lazygit" \
+    "libnma" \
+    "man-db" \
+    "man-pages" \
+    "neovim" \
+    "okular" \
+    "oniguruma" \
+    "papirus-icon-theme" \
+    "pcmanfm-gtk3" \
+    "playerctl" \
+    "postgresql" \
+    "ranger" \
+    "re2c" \
+    "redis" \
+    "swaylock" \
+    "telegram-desktop" \
+    "xorg-xwayland" \
+    "zsh" \
+    "zsh-syntax-highlighting"
+do
+    pacman -S --needed --noconfirm $pkg
+done
 
-function install_flatpak() {
-  flatpak install --noninteractive flathub $1
-}
+######################################
+# Packages: AUR
+######################################
 
-export -f install
-export -f install_aur
-export -f install_flatpak
+for pkg in \
+    "grimshot" \
+    "insomnia-bin" \
+    "nerd-fonts-roboto-mono" \
+    "nordic-theme-git" \
+    "oh-my-zsh-git" \
+    "qt5-styleplugins" \
+    "stremio" \
+    "visual-studio-code-bin" \
+    "zotero"
+do
+  sudo -u vncsna git clone https://aur.archlinux.org/$pkg.git
+  (cd $pkg && sudo -u vncsna makepkg -si --needed --noconfirm)
+  rm -rf $pkg
+done
 
-xargs -a pkgs/off.txt -I {} bash -c 'install "{}"'
-xargs -a pkgs/aur.txt -I {} bash -c 'install_aur "{}"'
-xargs -a pkgs/flatpak.txt -I {} bash -c 'install_flatpak "{}"'
+######################################
+# Packages: Flatpak
+######################################
 
-# Reference
-# https://stackoverflow.com/questions/11003418/calling-shell-functions-with-xargs
+for pkg in \
+    "com.discordapp.Discord"\
+    "com.slack.Slack"
+do
+    flatpak install --noninteractive flathub $pkg
+done
