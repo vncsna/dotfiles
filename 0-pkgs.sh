@@ -54,6 +54,7 @@ for pkg in \
     "qt5-styleplugins" \
     "stremio" \
     "visual-studio-code-bin" \
+    "wlsunset" \
     "zotero"
 do
   sudo -u vncsna git clone https://aur.archlinux.org/$pkg.git
