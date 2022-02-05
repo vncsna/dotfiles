@@ -34,6 +34,8 @@ for pkg in \
     "redis" \
     "swaylock" \
     "telegram-desktop" \
+    "terraform" \
+    "terragrunt" \
     "xorg-xwayland" \
     "zsh" \
     "zsh-syntax-highlighting"
