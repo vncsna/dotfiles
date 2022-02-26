@@ -16,7 +16,9 @@ for pkg in \
     "ctags" \
     "docker" \
     "docker-compose" \
+    "flatpak" \
     "file-roller" \
+    "fzf" \
     "git" \
     "lazygit" \
     "libnma" \
@@ -49,6 +51,7 @@ done
 
 for pkg in \
     "grimshot" \
+    "google-chrome" \
     "insomnia-bin" \
     "nerd-fonts-roboto-mono" \
     "nordic-theme-git" \
@@ -57,6 +60,8 @@ for pkg in \
     "stremio" \
     "visual-studio-code-bin" \
     "wlsunset" \
+    "wl-clipboard" \
+    "yay" \
     "zotero"
 do
   sudo -u vncsna git clone https://aur.archlinux.org/$pkg.git
