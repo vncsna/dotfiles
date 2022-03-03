@@ -38,6 +38,8 @@ for pkg in \
     "telegram-desktop" \
     "terraform" \
     "terragrunt" \
+    "xdg-desktop-portal" \
+    "xdg-desktop-portal-wlr" \
     "xorg-xwayland" \
     "zsh" \
     "zsh-syntax-highlighting"
