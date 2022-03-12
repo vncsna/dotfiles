@@ -20,6 +20,8 @@ for pkg in \
     "file-roller" \
     "fzf" \
     "git" \
+    "git-lfs" \
+    "github-cli" \
     "lazygit" \
     "libnma" \
     "man-db" \
@@ -52,6 +54,7 @@ done
 ######################################
 
 for pkg in \
+    "android-studio" \
     "grimshot" \
     "google-chrome" \
     "insomnia-bin" \
@@ -76,7 +79,7 @@ done
 ######################################
 
 for pkg in \
-    "com.discordapp.Discord"\
+    "com.discordapp.Discord" \
     "com.slack.Slack"
 do
     flatpak install --noninteractive flathub $pkg
