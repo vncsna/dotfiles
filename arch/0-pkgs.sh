@@ -1,4 +1,4 @@
-#!/bin/zsh -l
+#!/bin/bash -l
 set -euxo pipefail
 
 ######################################
@@ -46,7 +46,7 @@ for pkg in \
     "zsh" \
     "zsh-syntax-highlighting"
 do
-    pacman -S --needed --noconfirm $pkg
+    pacman -S --needed --noconfirm $pkg || true
 done
 
 ######################################
@@ -58,7 +58,7 @@ for pkg in \
     "grimshot" \
     "google-chrome" \
     "insomnia-bin" \
-    "nerd-fonts-roboto-mono" \
+    "nerd-fonts-complete" \
     "nordic-theme-git" \
     "oh-my-zsh-git" \
     "qt5-styleplugins" \
@@ -70,7 +70,7 @@ for pkg in \
     "zotero"
 do
   sudo -u vncsna git clone https://aur.archlinux.org/$pkg.git
-  (cd $pkg && sudo -u vncsna makepkg -si --needed --noconfirm)
+  (cd $pkg && sudo -u vncsna makepkg -si --needed --noconfirm)  || true
   rm -rf $pkg
 done
 
@@ -82,5 +82,5 @@ for pkg in \
     "com.discordapp.Discord" \
     "com.slack.Slack"
 do
-    flatpak install --noninteractive flathub $pkg
+    flatpak install --noninteractive flathub $pkg || true
 done
