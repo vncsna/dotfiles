@@ -75,6 +75,7 @@
         "wf-recorder",
         "xdg-desktop-portal",
         "xdg-desktop-portal-wlr",
+        "xorg-xlsclients",
         "xorg-xwayland",
         "zsh",
         "zsh-syntax-highlighting"
