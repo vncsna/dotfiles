@@ -34,12 +34,8 @@ set $wallpapers $HOME/.config/sway/wallpapers
 output * bg `find $wallpapers -type f | shuf -n 1` fill
 
 #######################################
-# Key bindings
+# Basic key bindings
 #######################################
-
-###################
-# Basic
-###################
 
 # Start a terminal
 bindsym $mod+Return exec $term
@@ -89,9 +85,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-###################
-# Workspaces
-###################
+#######################################
+# Workspace key bindings
+#######################################
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
@@ -119,9 +115,9 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 
-###################
+#######################################
 # Layout
-###################
+#######################################
 
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
@@ -146,9 +142,23 @@ bindsym $mod+space focus mode_toggle
 # Move focus to the parent container
 bindsym $mod+a focus parent
 
-###################
+#######################################
+# Clipboard
+#######################################
+
+exec wl-paste -t text --watch clipman store
+
+#######################################
+# Screenshot
+#######################################
+
+bindsym Print exec /usr/share/sway/scripts/grimshot save area - | swappy -f -
+bindsym Control+Print exec wf-recorder -g "$(slurp -d)" -f $HOME/Recordings/$(date -Is).mp4 -c h264_vaapi -d /dev/dri/renderD128 & notify-send "  Recording started"
+bindsym Control+Shift+Print exec killall -s SIGINT wf-recorder& notify-send "  Recording stopped"
+
+#######################################
 # Scratchpad
-###################
+#######################################
 
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
@@ -160,9 +170,9 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-###################
+#######################################
 # Resize mode
-###################
+#######################################
 
 mode "resize" {
     # left will shrink the containers width
