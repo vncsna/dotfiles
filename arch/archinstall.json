@@ -1,0 +1,86 @@
+{
+    "audio": "pipewire",
+    "bootloader": "systemd-bootctl",
+    "custom-commands": [
+        "cd /home/vncsna; git clone https://github.com/vncsna/dotfiles.git",
+        "sudo /home/vncsna/dotfiles/arch/archsetup.sh"
+    ],
+    "desktop-environment": "sway",
+    "dry-run": true,
+    "gfx_driver": "All open-source (default)",
+    "harddrives": [
+        "/dev/nvme0n1"
+    ],
+    "hostname": "arch",
+    "kernels": [
+        "linux"
+    ],
+    "keyboard-layout": "br-abnt2",
+    "mirror-region": {
+        "Brazil": {
+            "http://archlinux.c3sl.ufpr.br/$repo/os/$arch": true,
+            "http://archlinux.pop-es.rnp.br/$repo/os/$arch": true,
+            "http://br.mirror.archlinux-br.org/$repo/os/$arch": true,
+            "http://linorg.usp.br/archlinux/$repo/os/$arch": true,
+            "http://mirror.ufam.edu.br/archlinux/$repo/os/$arch": true,
+            "http://mirror.ufscar.br/archlinux/$repo/os/$arch": true
+        }
+    },
+    "nic": {
+        "NetworkManager": true,
+        "nic": "Use NetworkManager (necessary to configure internet graphically in GNOME and KDE)"
+    },
+    "ntp": true,
+    "packages": [
+        "aws-cli",
+        "base-devel",
+        "blueberry",
+        "bluez",
+        "bluez-utils",
+        "brightnessctl",
+        "calibre",
+        "ctags",
+        "docker",
+        "docker-compose",
+        "flatpak",
+        "file-roller",
+        "firefox",
+        "fzf",
+        "git",
+        "git-lfs",
+        "github-cli",
+        "lazygit",
+        "libnma",
+        "man-db",
+        "man-pages",
+        "neovim",
+        "okular",
+        "oniguruma",
+        "papirus-icon-theme",
+        "pcmanfm",
+        "playerctl",
+        "postgresql",
+        "ranger",
+        "re2c",
+        "redis",
+        "sof-firmware",
+        "swaylock",
+        "telegram-desktop",
+        "terraform",
+        "terragrunt",
+        "xdg-desktop-portal",
+        "xdg-desktop-portal-wlr",
+        "xorg-xwayland",
+        "zsh",
+        "zsh-syntax-highlighting"
+    ],
+    "profile": {
+        "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/desktop.py"
+    },
+    "script": "guided",
+    "swap": true,
+    "sys-encoding": "utf-8",
+    "sys-language": "en_US",
+    "timezone": "America/Sao_Paulo",
+    "version": "2.3.2"
+}
