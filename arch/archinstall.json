@@ -3,9 +3,7 @@
     "bootloader": "systemd-bootctl",
     "custom-commands": [
         "mkdir -p /home/vncsna",
-        "git clone https://github.com/vncsna/dotfiles.git /home/vncsna/dotfiles",
-        "chown -R vncsna /home/vncsna",
-        "/home/vncsna/dotfiles/arch/archsetup.sh"
+        "chown -R vncsna /home/vncsna"
     ],
     "desktop-environment": "sway",
     "dry-run": true,
