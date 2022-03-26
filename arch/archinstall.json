@@ -2,8 +2,10 @@
     "audio": "pipewire",
     "bootloader": "systemd-bootctl",
     "custom-commands": [
-        "cd /home/vncsna; git clone https://github.com/vncsna/dotfiles.git",
-        "sudo /home/vncsna/dotfiles/arch/archsetup.sh"
+        "mkdir -p /home/vncsna",
+        "git clone https://github.com/vncsna/dotfiles.git /home/vncsna/dotfiles",
+        "chown -R vncsna /home/vncsna",
+        "/home/vncsna/dotfiles/arch/archsetup.sh"
     ],
     "desktop-environment": "sway",
     "dry-run": true,
