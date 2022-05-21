@@ -17,8 +17,7 @@
 
     "modules-left": [
       "custom/menu",
-      "sway/workspaces",
-      "custom/scratchpad"
+      "sway/workspaces"
     ],
     "modules-center": [
       "custom/wf-recorder",
@@ -38,10 +37,6 @@
         // media
         "custom/playerctl",
         "pulseaudio",
-
-        // system
-        "custom/sunset",
-        "custom/pacman",
 
         "tray",
         "clock"
@@ -181,34 +176,6 @@
         "min-length": 5,
         "tooltip": false,
         "on-click": "swaymsg input $(swaymsg -t get_inputs --raw | jq '[.[] | select(.type == \"keyboard\")][0] | .identifier') xkb_switch_layout next"
-    },
-
-    "custom/scratchpad": {
-        "interval": "once",
-        "return-type": "json",
-        "format": "{icon}",
-        "format-icons": {
-            "one": "类",
-            "many": "缾"
-        },
-        "exec": "/bin/sh /usr/share/sway/scripts/scratchpad.sh",
-        "on-click": "swaymsg 'scratchpad show'",
-        "signal": 7
-    },
-
-    "custom/sunset": {
-        "interval": "once",
-        "tooltip": false,
-        "return-type": "json",
-        "format": "{icon}",
-        "format-icons": {
-            "on": "",
-            "off": ""
-        },
-        "exec": "/usr/share/sway/scripts/sunset.sh",
-        "on-click": "/usr/share/sway/scripts/sunset.sh toggle; pkill -RTMIN+6 waybar",
-        "exec-if": "/usr/share/sway/scripts/sunset.sh check",
-        "signal": 6
     },
 
     "custom/wf-recorder": {

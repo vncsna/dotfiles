@@ -1,15 +1,67 @@
 #!/bin/bash -l
-set -euxo pipefail
+
+install() {
+    for pkg in \
+        "aws-cli" \
+        "base-devel" \
+        "blueberry" \
+        "bluez" \
+        "bluez-utils" \
+        "brightnessctl" \
+        "calibre" \
+        "ctags" \
+        "docker" \
+        "docker-compose" \
+        "flatpak" \
+        "file-roller" \
+        "firefox" \
+        "fzf" \
+        "git" \
+        "git-lfs" \
+        "github-cli" \
+        "lazygit" \
+        "libnma" \
+        "mako" \
+        "man-db" \
+        "man-pages" \
+        "neovim" \
+        "okular" \
+        "oniguruma" \
+        "papirus-icon-theme" \
+        "pcmanfm" \
+        "playerctl" \
+        "postgresql" \
+        "ranger" \
+        "re2c" \
+        "redis" \
+        "sof-firmware" \
+        "swappy" \
+        "swaylock" \
+        "telegram-desktop" \
+        "terraform" \
+        "terragrunt" \
+        "wf-recorder" \
+        "xdg-desktop-portal" \
+        "xdg-desktop-portal-wlr" \
+        "xorg-xlsclients" \
+        "xorg-xwayland" \
+        "zsh" \
+        "zsh-syntax-highlighting"
+    do
+        sudo --user=vncsna pacman --sync --needed --noconfirm $pgk || true
+    done
+}
 
 install_aur() {
     for pkg in \
-        "android-studio" \
+        "beekeeper-studio" \
         "clipman" \
         "grimshot" \
         "google-chrome" \
         "insomnia-bin" \
         "nerd-fonts-complete" \
         "nordic-theme-git" \
+        "notion-app-enhanced" \
         "oh-my-zsh-git" \
         "qt5-styleplugins" \
         "stremio" \
@@ -19,9 +71,9 @@ install_aur() {
         "yay" \
         "zotero"
     do
-        sudo -u vncsna git clone https://aur.archlinux.org/$pkg.git  || true
-        (cd $pkg && sudo -u vncsna makepkg -si --needed --noconfirm) || true
-        rm -rf $pkg                                                  || true
+        sudo --user=vncsna git clone https://aur.archlinux.org/$pkg.git || true
+        (cd $pkg && sudo --user=vncsna makepkg --install --syncdeps --needed --noconfirm) || true
+        rm -rf $pkg || true
     done
 }
 
@@ -30,7 +82,7 @@ install_flatpak() {
         "com.discordapp.Discord" \
         "com.slack.Slack"
     do
-        flatpak install --noninteractive flathub $pkg                || true
+        flatpak install --noninteractive flathub $pkg || true
     done
 }
 
@@ -43,8 +95,12 @@ setup_git() {
 
 setup_zsh() {
     chsh -s $(which zsh) $USER
-    OHMYZSH=https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-    (sh -c "$(curl -fsSL $OHMYZSH)")
+    git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+}
+
+setup_config() {
+    cp --recursive ./root/etc/* /etc
+    cp --recursive ./root/home/* /home
 }
 
 setup_theme() {
@@ -61,21 +117,17 @@ setup_docker() {
     systemctl enable containerd.service
 }
 
-setup_config() {
-    cp -r ./root/home/* /home
-    cp -r ./root/etc/* /etc
-}
-
 setup_asdf() {
-    ASDFV=v0.9.0
-    NODEV=16.14.2
-    PYTHONV=3.9.10
+    ASDFV=v0.10.0
+    NODEV=16.15.0
+    PYTHONV=3.10.0
+    KUBECTLV=1.22.0
 
     if [ ! -d "$HOME/.asdf" ]; then
         git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch $ASDFV
     fi
 
-    . $HOME/.asdf/asdf.sh
+    source $HOME/.asdf/asdf.sh
 
     asdf plugin add nodejs || :
     asdf install nodejs $NODEV
@@ -84,13 +136,8 @@ setup_asdf() {
     asdf plugin add python || :
     asdf install python $PYTHONV
     asdf global python $PYTHONV
-}
 
-install_aur
-install_flatpak
-setup_git
-setup_zsh
-setup_theme
-setup_docker
-setup_config
-setup_asdf
+    asdf plugin add kubectl || :
+    asdf install kubectl $KUBECTLV
+    asdf global kubectl $KUBECTLV
+}

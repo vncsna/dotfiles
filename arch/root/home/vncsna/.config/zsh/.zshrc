@@ -73,6 +73,7 @@ ZSH_THEME="af-magic"
 plugins=(
   asdf
   sudo
+  zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -104,8 +105,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ###########################################################
-# Personal Configuration ##################################
-###########################################################
+# Personal configuration
 
 # Enable await on node repl
 export NODE_OPTIONS="--experimental-repl-await"
@@ -134,7 +134,5 @@ function install_aur() {
 }
 
 ###########################################################
-# Zsh Syntax Highlightning ################################
-###########################################################
-
+# Set zsh syntax highlightning path
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
