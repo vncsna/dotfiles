@@ -119,11 +119,10 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +20%
 ##############################################################################
 # Inputs. Use swaymsg -t get_inputs to find these
 
-# Keyboard
-input * {
-  xkb_layout br
-  xkb_model abnt2
-  xkb_variant abnt2
+input type:keyboard {
+  xkb_layout br,us
+  xkb_model abnt2,
+  xkb_options grp:rctrl_toggle
 }
 
 # Mouse

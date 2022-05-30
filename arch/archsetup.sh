@@ -19,6 +19,7 @@ install() {
         "git" \
         "git-lfs" \
         "github-cli" \
+        "k9s" \
         "lazygit" \
         "libnma" \
         "mako" \
@@ -29,6 +30,8 @@ install() {
         "oniguruma" \
         "papirus-icon-theme" \
         "pcmanfm" \
+        "pgadmin4" \
+        "pgcli" \
         "playerctl" \
         "postgresql" \
         "ranger" \
@@ -40,6 +43,7 @@ install() {
         "telegram-desktop" \
         "terraform" \
         "terragrunt" \
+        "tldr" \
         "wf-recorder" \
         "xdg-desktop-portal" \
         "xdg-desktop-portal-wlr" \
@@ -56,9 +60,11 @@ install_aur() {
     for pkg in \
         "beekeeper-studio" \
         "clipman" \
+        "fzf-tab-bin-git" \
         "grimshot" \
         "google-chrome" \
         "insomnia-bin" \
+        "navi" \
         "nerd-fonts-complete" \
         "nordic-theme-git" \
         "notion-app-enhanced" \

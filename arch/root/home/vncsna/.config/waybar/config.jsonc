@@ -11,7 +11,7 @@
     // Global configuration
     // -------------------------------------------------------------------------
 
-    "height": 28,
+    "height": 26,
     "layer": "bottom",
     "position": "bottom",
 
@@ -161,12 +161,8 @@
     },
 
     "bluetooth": {
-        "format": "{icon}",
-        "interval": 30,
-        "format-icons": {
-            "enabled": "",
-            "disabled": ""
-        },
+        "format": "",
+        "format-off": "",
         "on-click": "blueberry",
         "tooltip-format": "{}"
     },
