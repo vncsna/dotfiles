@@ -25,6 +25,8 @@ set $term_float alacritty \
 # on the original workspace that the command was run on
 set $launcher dmenu_path | fzf | xargs swaymsg exec
 set $menu $term_float zsh -c \'$launcher\'
+set $launcher_work ls -d $HOME/Work/* | fzf | xargs code
+set $menu_work $term_float zsh -c \'$launcher_work'\
 
 # Random wallpaper from default ones
 set $wallpapers $HOME/.config/sway/wallpapers
@@ -41,6 +43,7 @@ bindsym $mod+Shift+q kill
 
 # Start your launcher
 bindsym $mod+d exec $menu
+bindsym $mod+x exec $menu_work
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -122,7 +125,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +20%
 input type:keyboard {
   xkb_layout br,us
   xkb_model abnt2,
-  xkb_options grp:rctrl_toggle
+  xkb_options grp:lalt_toggle
 }
 
 # Mouse
