@@ -25,7 +25,7 @@ set $term_float alacritty \
 # on the original workspace that the command was run on
 set $launcher dmenu_path | fzf | xargs swaymsg exec
 set $menu $term_float zsh -c \'$launcher\'
-set $launcher_work ls -d $HOME/Work/* | fzf | xargs code
+set $launcher_work ls -d $HOME/Work/* | fzf | xargs --no-run-if-empty code
 set $menu_work $term_float zsh -c \'$launcher_work'\
 
 # Random wallpaper from default ones
