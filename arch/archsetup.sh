@@ -4,6 +4,7 @@ install() {
     for pkg in \
         "aws-cli" \
         "base-devel" \
+        "bitwarden-cli" \
         "blueberry" \
         "bluez" \
         "bluez-utils" \
@@ -58,6 +59,7 @@ install() {
 
 install_aur() {
     for pkg in \
+        "1password-cli" \
         "beekeeper-studio" \
         "clipman" \
         "fzf-tab-bin-git" \
