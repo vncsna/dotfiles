@@ -23,9 +23,9 @@ set $term_float alacritty \
 # Note: pass the final command to swaymsg
 # so that the resulting window can be opened
 # on the original workspace that the command was run on
-set $launcher dmenu_path | fzf | xargs swaymsg exec
+set $launcher dmenu_path | fzf -i | xargs swaymsg exec
 set $menu $term_float zsh -c \'$launcher\'
-set $launcher_work ls -d $HOME/Work/* | fzf | xargs --no-run-if-empty code
+set $launcher_work ls -d $HOME/work/* | fzf -i | xargs --no-run-if-empty code
 set $menu_work $term_float zsh -c \'$launcher_work'\
 
 # Random wallpaper from default ones
@@ -123,12 +123,12 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +20%
 # Inputs. Use swaymsg -t get_inputs to find these
 
 input type:keyboard {
+  xkb_model abnt2
   xkb_layout br,us
-  xkb_model abnt2,
+  xkb_numlock enabled
   xkb_options grp:lalt_toggle
 }
 
-# Mouse
 mouse_warping none
 input type:pointer {
     left_handed enabled
@@ -140,6 +140,10 @@ input type:pointer {
 # Set monitor position
 output eDP-1 pos 0 0
 output HDMI-A-1 pos 1920 0
+
+# Set monitor lid
+bindswitch --reload lid:on output eDP-1 disable
+bindswitch --reload lid:off output eDP-1 enable
 
 # Set monitor temperature
 exec wlsunset -T 4200 & disown

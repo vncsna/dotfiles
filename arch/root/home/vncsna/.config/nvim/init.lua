@@ -1,9 +1,4 @@
 -----------------------------------------------------------
--- Base template on ---------------------------------------
--- https://github.com/mjlbach/defaults.nvim ---------------
------------------------------------------------------------
-
------------------------------------------------------------
 -- Vim config ---------------------------------------------
 -----------------------------------------------------------
 
@@ -41,10 +36,9 @@ vim.api.nvim_set_keymap('', '<leader>P', '"+P', {noremap = true})
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
 
 -----------------------------------------------------------
------------------------------------------------------------
+-- Packer install -----------------------------------------
 -----------------------------------------------------------
 
--- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -85,10 +79,6 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
-
-  -----------------------------------------------------------
-  -- Packer config ------------------------------------------
-  -----------------------------------------------------------
 
   -- Install gutentags dependencies
   -- pacman -S ctags
@@ -146,7 +136,7 @@ vim.cmd [[colorscheme onedark]]
 vim.g.lightline = {
   colorscheme = 'onedark',
   active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
-  component_function = { gitbranch = 'fugitive#head' },
+  component_function = { gitbranch = 'FugitiveHead' },
 }
 
 --Remap space as leader key
