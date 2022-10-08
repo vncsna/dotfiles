@@ -18,7 +18,8 @@ plugins=(asdf git sudo zsh-z)
 source $ZSH/oh-my-zsh.sh
 
 # set aliases and functions
-source ~/.config/zsh/utils.sh
+source ~/.config/zsh/envi.sh
+source ~/.config/zsh/util.sh
 
 # set environment variables
 source ~/.asdf/plugins/java/set-java-home.zsh
