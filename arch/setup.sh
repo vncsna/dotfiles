@@ -15,7 +15,6 @@ install() {
         "docker-compose" \
         "flatpak" \
         "file-roller" \
-        "firefox" \
         "fzf" \
         "git" \
         "git-lfs" \
@@ -128,7 +127,7 @@ setup_docker() {
 setup_asdf() {
     ASDFV=v0.10.0
     NODEV=16.15.0
-    PYTHONV=3.10.0
+    PYTHONV=3.10.5
     KUBECTLV=1.22.0
 
     if [ ! -d "$HOME/.asdf" ]; then
