@@ -12,7 +12,7 @@ ZSH_THEME="af-magic"
 # custom plugins may be added to $ZSH_CUSTOM/plugins/
 # example format: plugins=(rails git textmate ruby lighthouse)
 # add wisely, as too many plugins slow down shell startup
-plugins=(asdf git sudo zsh-z)
+plugins=(asdf git sudo z zsh-syntax-highlighting)
 
 # source oh my zsh
 source $ZSH/oh-my-zsh.sh
@@ -22,10 +22,6 @@ source ~/.config/zsh/envi.sh
 source ~/.config/zsh/util.sh
 
 # set environment variables
-source ~/.asdf/plugins/java/set-java-home.zsh
 export NODE_OPTIONS="--experimental-repl-await"
 export PNPM_HOME="/home/vncsna/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-
-# source zsh syntax highlightning
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

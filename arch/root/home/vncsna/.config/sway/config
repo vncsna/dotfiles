@@ -14,10 +14,8 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty
-set $term_float alacritty \
-  --title 'launcher'\
-  --command
+set $term foot
+set $term_float foot --title 'launcher'
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg
@@ -29,8 +27,7 @@ set $launcher_work ls -d $HOME/work/* | fzf -i | xargs --no-run-if-empty code
 set $menu_work $term_float zsh -c \'$launcher_work'\
 
 # Random wallpaper from default ones
-set $wallpapers $HOME/.config/sway/wallpapers
-output * bg `find $wallpapers -type f | shuf -n 1` fill
+output * bg `find $HOME/.config/sway/wallpapers -type f | shuf -n 1` fill
 
 ##############################################################################
 # Key bindings
