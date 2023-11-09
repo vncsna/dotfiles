@@ -11,6 +11,7 @@ fi
 
 paru --sync --quiet --needed --noconfirm \
     "aws-cli-v2" \
+    "aws-vault" \
     "base-devel" \
     "bitwarden-cli" \
     "blueberry" \
