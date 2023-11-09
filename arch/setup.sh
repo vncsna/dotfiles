@@ -10,7 +10,7 @@ if [[ ! "$(pacman -Qe paru)" == *"paru"* ]]; then
 fi
 
 paru --sync --quiet --needed --noconfirm \
-    "aws-cli" \
+    "aws-cli-v2" \
     "base-devel" \
     "bitwarden-cli" \
     "blueberry" \
