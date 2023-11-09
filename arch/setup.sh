@@ -21,7 +21,6 @@ paru --sync --quiet --needed --noconfirm \
     "ctags" \
     "docker" \
     "docker-compose" \
-    "flatpak" \
     "fzf" \
     "git" \
     "git-lfs" \
@@ -67,12 +66,6 @@ paru --sync --quiet --needed --noconfirm \
     "wlsunset" \
     "wl-clipboard" \
     "zotero-bin"
-
-########################################
-
-flatpak install --noninteractive flathub \
-    "com.discordapp.Discord" \
-    "com.slack.Slack"
 
 ########################################
 
