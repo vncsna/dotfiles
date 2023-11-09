@@ -68,6 +68,7 @@ install node nodejs 16.15.0
 install python python 3.10.5
 install python python 3.11.6
 install kubectl kubectl 1.22.0
+install kubectl kubectl 1.24.16
 
 ########################################
 
