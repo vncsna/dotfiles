@@ -10,5 +10,8 @@ curl -O $GCLOUD_URL/$GCLOUD_PACKAGE
 tar -xf $GCLOUD_PACKAGE
 ./google-cloud-sdk/install.sh
 
+# Install gke plugin
+# gcloud components install gke-gcloud-auth-plugin
+
 # References
 # https://cloud.google.com/sdk/docs/install
