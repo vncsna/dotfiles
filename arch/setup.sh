@@ -26,6 +26,7 @@ paru --sync --quiet --needed --noconfirm \
     "git" \
     "git-lfs" \
     "github-cli" \
+    "kubectx" \
     "mako" \
     "man-db" \
     "man-pages" \

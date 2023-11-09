@@ -21,6 +21,7 @@ paru --sync --quiet --needed --noconfirm \
     "git" \
     "git-lfs" \
     "github-cli" \
+    "kubectx" \
     "man-db" \
     "man-pages" \
     "neovim" \
