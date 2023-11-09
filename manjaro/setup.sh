@@ -66,7 +66,7 @@ source /opt/asdf-vm/asdf.sh
 
 install node nodejs 16.15.0
 install python python 3.10.5
-install python python 3.11.16
+install python python 3.11.6
 install kubectl kubectl 1.22.0
 
 ########################################
