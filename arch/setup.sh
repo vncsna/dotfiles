@@ -59,8 +59,6 @@ paru --sync --quiet --needed --noconfirm \
     "google-chrome" \
     "insomnia-bin" \
     "navi" \
-    "nerd-fonts-complete" \
-    "nordic-theme-git" \
     "notion-app-enhanced" \
     "oh-my-zsh-git" \
     "qt5-styleplugins" \
