@@ -52,6 +52,7 @@ git config --global user.email vncsna@gmail.com
 
 [ -d "./root/etc" ] && sudo cp --backup --recursive ./root/etc/* /etc
 [ -d "./root/home" ] && sudo cp --backup --recursive ./root/home/* /home
+[ -d "./root/home" ] && sudo chown --recursive vncsna:vncsna /home
 
 ########################################
 
