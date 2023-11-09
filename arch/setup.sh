@@ -109,7 +109,7 @@ install() {
         asdf reshim $2
     fi
 }
-source $ASDF_DIR/asdf.sh
+source /opt/asdf-vm/asdf.sh
 
 install node nodejs 16.15.0
 install python python 3.10.5
