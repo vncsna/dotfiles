@@ -33,7 +33,6 @@ paru --sync --quiet --needed --noconfirm \
     "tldr"
 
 paru --sync --quiet --needed --noconfirm \
-    "1password-cli" \
     "asdf-vm" \
     "google-chrome" \
     "insomnia-bin" \

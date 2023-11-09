@@ -50,7 +50,6 @@ paru --sync --quiet --needed --noconfirm \
     "zsh"
 
 paru --sync --quiet --needed --noconfirm \
-    "1password-cli" \
     "asdf-vm" \
     "beekeeper-studio-bin" \
     "clipman" \
