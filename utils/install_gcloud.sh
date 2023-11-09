@@ -10,8 +10,17 @@ curl -O $GCLOUD_URL/$GCLOUD_PACKAGE
 tar -xf $GCLOUD_PACKAGE
 ./google-cloud-sdk/install.sh
 
-# Install gke plugin
+# Dependencies
 # gcloud components install gke-gcloud-auth-plugin
+
+# Setup
+# gcloud auth login
+# gcloud projects list
+# gcloud config set project PROJECT_ID
+
+# Setup GKE
+# gcloud container clusters list
+# gcloud container clusters get-credentials CLUSTER --location=LOCATION
 
 # References
 # https://cloud.google.com/sdk/docs/install
