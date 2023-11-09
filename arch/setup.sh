@@ -19,6 +19,7 @@ paru --sync --quiet --needed --noconfirm \
     "brightnessctl" \
     "calibre" \
     "ctags" \
+    "dbeaver" \
     "docker" \
     "docker-compose" \
     "fzf" \
