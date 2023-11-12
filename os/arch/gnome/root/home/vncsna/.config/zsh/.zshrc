@@ -12,7 +12,7 @@ ZSH_THEME="af-magic"
 # custom plugins may be added to $ZSH_CUSTOM/plugins/
 # example format: plugins=(rails git textmate ruby lighthouse)
 # add wisely, as too many plugins slow down shell startup
-plugins=(asdf git sudo z zsh-syntax-highlighting)
+plugins=(asdf git sudo z z-autosuggestions zsh-syntax-highlighting)
 
 # source oh my zsh
 source $ZSH/oh-my-zsh.sh

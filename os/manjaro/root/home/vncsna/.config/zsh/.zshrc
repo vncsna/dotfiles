@@ -14,7 +14,7 @@ fi
 
 # User configuration ##################
 
-plugins=(asdf git sudo)
+plugins=(asdf git sudo z-autosuggestions)
 
 alias d=docker
 alias dc=docker-compose
