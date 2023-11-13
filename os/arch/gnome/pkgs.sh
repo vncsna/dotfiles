@@ -19,12 +19,14 @@ paru --sync --quiet --needed --noconfirm \
     "git-lfs" \
     "github-cli" \
     "kubectx" \
+    "litecli" \
     "man-db" \
     "man-pages" \
     "neovim" \
     "pgcli" \
     "postgresql" \
     "redis" \
+    "sqlite" \
     "telegram-desktop" \
     "terraform" \
     "terragrunt" \

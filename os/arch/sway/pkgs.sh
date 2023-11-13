@@ -35,6 +35,7 @@ paru --sync --quiet --needed --noconfirm \
     "ranger" \
     "redis" \
     "sof-firmware" \
+    "sqlite" \
     "swappy" \
     "swaylock" \
     "telegram-desktop" \
@@ -52,6 +53,7 @@ paru --sync --quiet --needed --noconfirm \
     "grimshot" \
     "google-chrome" \
     "insomnia-bin" \
+    "litecli" \
     "navi" \
     "oh-my-zsh-git" \
     "qt5-styleplugins" \

@@ -23,6 +23,7 @@ paru --sync --quiet --needed --noconfirm \
     "pgcli" \
     "postgresql" \
     "redis" \
+    "sqlite" \
     "telegram-desktop" \
     "terraform" \
     "terragrunt" \
@@ -32,6 +33,7 @@ paru --sync --quiet --needed --noconfirm \
     "asdf-vm" \
     "google-chrome" \
     "insomnia-bin" \
+    "litecli" \
     "slack-desktop" \
     "stremio" \
     "visual-studio-code-bin" \
