@@ -35,6 +35,7 @@ paru --sync --quiet --needed --noconfirm \
 
 paru --sync --quiet --needed --noconfirm \
     "asdf-vm" \
+    "cursor-bin" \
     "google-chrome" \
     "insomnia-bin" \
     "oh-my-zsh-git" \

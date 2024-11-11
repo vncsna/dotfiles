@@ -49,6 +49,7 @@ paru --sync --quiet --needed --noconfirm \
 paru --sync --quiet --needed --noconfirm \
     "asdf-vm" \
     "clipman" \
+    "cursor-bin" \
     "fzf-tab-bin-git" \
     "grimshot" \
     "google-chrome" \
