@@ -18,5 +18,8 @@ plugins=(asdf git sudo z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # set aliases and functions
+alias d=docker
+alias dc=docker-compose
+alias k=kubectl
 source ~/.config/zsh/envi.sh
 source ~/.config/zsh/util.sh
