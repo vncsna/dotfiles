@@ -2,10 +2,8 @@
 
 set -e
 
-if [[ ! "$(groups)" == *"docker"* ]]; then
-    sudo groupadd --force docker
-    sudo usermod --append --groups docker $USER
-    newgrp docker
-    systemctl enable docker.service
-    systemctl enable containerd.service
-fi
+sudo groupadd --force docker
+sudo usermod --append --groups docker $USER
+newgrp docker
+systemctl enable --now docker.service
+systemctl enable --now containerd.service
