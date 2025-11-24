@@ -1,4 +1,4 @@
-# path to your oh-my-zsh installation
+export EDITOR="nvim"
 export ZSH="/usr/share/oh-my-zsh"
 
 # set name of the theme to load --- if set to "random", it will
@@ -12,14 +12,28 @@ ZSH_THEME="af-magic"
 # custom plugins may be added to $ZSH_CUSTOM/plugins/
 # example format: plugins=(rails git textmate ruby lighthouse)
 # add wisely, as too many plugins slow down shell startup
-plugins=(asdf git sudo z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(asdf fzf kubectl git sudo z zsh-autosuggestions zsh-syntax-highlighting)
 
 # source oh my zsh
 source $ZSH/oh-my-zsh.sh
 
-# set aliases and functions
+# set aliases
 alias d=docker
 alias dc=docker-compose
-alias k=kubectl
-source ~/.config/zsh/envi.sh
-source ~/.config/zsh/util.sh
+
+# set utilities
+function lenv() {
+  if [[ $# -eq 1 ]]; then
+    set -a
+    source "$1"
+    set +a
+  else
+    echo "Number of parameters should be 1"
+  fi
+}
+awsenv () {
+    export $(aws configure export-credentials --profile default --format env-no-export)
+}
+awsenv-eks () {
+    export $(aws configure export-credentials --profile eks --format env-no-export)
+}
