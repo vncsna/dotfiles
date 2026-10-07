@@ -13,7 +13,7 @@ install() {
 
 install golang 1.24.1
 install helm 3.16.0
-install kubectl 1.22.0
+install kubectl 1.37.1
 install nodejs 25.0.0
 install pnpm 11.7.0
 install python 3.13.11
