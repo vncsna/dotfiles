@@ -294,4 +294,3 @@ bindsym $mod+minus scratchpad show
 # https://wiki.archlinux.org/title/PipeWire#WebRTC_screen_sharing
 # https://github.com/systemd/systemd/blob/main/xorg/50-systemd-user.sh
 # https://github.com/Alexays/Waybar/issues/1093#issuecomment-841846291
-# https://github.com/Manjaro-Sway/desktop-settings/blob/sway/community/sway/etc/sway/config.d/99-autostart-applications.conf

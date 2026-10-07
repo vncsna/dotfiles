@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-# One of: arch/gnome, arch/sway, and manjaro
+# One of: arch/gnome and arch/sway
 
 set -e
 
