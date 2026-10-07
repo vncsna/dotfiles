@@ -5,14 +5,14 @@ verification. Read it for context and keep it in sync when provisioning changes.
 
 ## Layout
 
-- Add config files only under `os/<profile>/root/`, mirroring the filesystem. Never place
+- Add config files only under `os/<os>/<de>/root/`, mirroring the filesystem. Never place
   them elsewhere in the repo.
-- `os/<profile>/pkgs.sh` — repo packages first, then AUR-only packages in a second `paru`
+- `os/<os>/<de>/pkgs.sh` — repo packages first, then AUR-only packages in a second `paru`
   call. Alphabetical within each block.
 
 ## Scripts
 
-- Shebang is `#!/bin/bash -l`; `set -e` on the next line.
+- Shebang is `#!/bin/bash -l`, then a blank line and `set -e`.
 - Idempotent: guard with a check before acting (`if [[ ! ... ]]`) and use `--needed`/`--force`.
 - Long-form flags (`--sync --quiet --needed --noconfirm`, `--backup --recursive`), not short ones.
 - Use `$USER`/`$HOME` instead of hardcoded paths, except where a path must mirror the filesystem.

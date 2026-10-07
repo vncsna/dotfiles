@@ -13,7 +13,7 @@ cd dotfiles/os
 ./arch/gnome/pkgs.sh        # pacman + AUR packages
 ./config.sh arch/gnome      # deploy the profile's root/ tree into /
 ./zsh.sh                    # zsh login shell + oh-my-zsh plugins
-./asdf.sh                   # runtimes (go, helm, kubectl, node, python) + npm language servers
+./asdf.sh                   # runtimes (go, helm, kubectl, node, pnpm, python) + npm language servers
 ./docker.sh                 # Docker daemon + user group
 ./git.sh                    # global git identity and defaults
 ./gcloud.sh                 # optional; then: gcloud components install gke-gcloud-auth-plugin
@@ -30,7 +30,7 @@ filesystem, so `root/home/vncsna/.config/zsh/.zshrc` lands at `/home/vncsna/.con
 - `~/.zshenv` sets `ZDOTDIR=~/.config/zsh`, so the real zsh config is `~/.config/zsh/.zshrc`.
 - asdf shims live in `~/.asdf/shims`; `.zshrc` puts them on `PATH`.
 - `~/.tmux.conf` enables vi mode keys and a 256-color terminal; `tmux` is installed by `pkgs.sh`.
-- nvim bootstraps `lazy.nvim` on first launch. LSP servers: `gopls` (asdf), `lua-language-server`
+- nvim bootstraps `lazy.nvim` on first launch. LSP servers: `gopls` (go install), `lua-language-server`
   and `rust-analyzer` (pacman), `pyright`/`ts_ls` (npm via `asdf.sh`). Telescope needs `fd`/`ripgrep`,
   git integration uses `lazygit`, the `+` register needs `wl-clipboard`, and `<leader>a` launches
   `opencode`.
