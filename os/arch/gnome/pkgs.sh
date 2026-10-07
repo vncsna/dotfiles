@@ -24,6 +24,7 @@ paru --sync --quiet --needed --noconfirm \
     "man-db" \
     "man-pages" \
     "neovim" \
+    "opencode" \
     "pgcli" \
     "postgresql" \
     "redis" \

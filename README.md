@@ -32,7 +32,8 @@ filesystem, so `root/home/vncsna/.config/zsh/.zshrc` lands at `/home/vncsna/.con
 - `~/.tmux.conf` enables vi mode keys and a 256-color terminal; `tmux` is installed by `pkgs.sh`.
 - nvim bootstraps `lazy.nvim` on first launch. LSP servers: `gopls` (asdf), `lua-language-server`
   and `rust-analyzer` (pacman), `pyright`/`ts_ls` (npm via `asdf.sh`). Telescope needs `fd`/`ripgrep`,
-  git integration uses `lazygit`, and the `+` register needs `wl-clipboard`.
+  git integration uses `lazygit`, the `+` register needs `wl-clipboard`, and `<leader>a` launches
+  `opencode`.
 - Tool versions (asdf, gcloud) are pinned to what the profile was written against; packages track
   the rolling repos. Newer is fine unless compatibility requires otherwise.
 
