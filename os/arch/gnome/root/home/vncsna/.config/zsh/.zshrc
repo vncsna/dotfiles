@@ -46,7 +46,7 @@ function lenv() {
 
 # pnpm
 # $path is a zsh array tied to $PATH; "${path[@]:#X}" drops any X entry
-export PNPM_HOME="/home/vncsna/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 ASDF_SHIMS="$HOME/.asdf/shims"
 path=("$ASDF_SHIMS" "${path[@]:#$ASDF_SHIMS}")   # asdf shims first
 path=("${path[@]:#$PNPM_HOME}" "$PNPM_HOME")     # pnpm bin last
