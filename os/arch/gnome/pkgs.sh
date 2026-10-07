@@ -34,6 +34,7 @@ paru --sync --quiet --needed --noconfirm \
     "terraform" \
     "terragrunt" \
     "tldr" \
+    "tmux" \
     "tree-sitter-cli" \
     "unzip" \
     "wl-clipboard" \
