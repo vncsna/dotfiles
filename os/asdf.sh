@@ -21,3 +21,7 @@ install python 3.13.11
 # Language servers distributed via npm (node is installed above)
 "$HOME/.asdf/shims/npm" install --global pyright typescript typescript-language-server
 asdf reshim nodejs
+
+# go language server; go auto-downloads the toolchain gopls needs to build
+"$HOME/.asdf/shims/go" install golang.org/x/tools/gopls@v0.23.0
+asdf reshim golang

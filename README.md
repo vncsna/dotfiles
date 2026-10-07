@@ -30,8 +30,8 @@ filesystem, so `root/home/vncsna/.config/zsh/.zshrc` lands at `/home/vncsna/.con
 - `~/.zshenv` sets `ZDOTDIR=~/.config/zsh`, so the real zsh config is `~/.config/zsh/.zshrc`.
 - asdf shims live in `~/.asdf/shims`; `.zshrc` puts them on `PATH`.
 - `~/.tmux.conf` enables vi mode keys and a 256-color terminal; `tmux` is installed by `pkgs.sh`.
-- nvim bootstraps `lazy.nvim` on first launch. LSP servers: `gopls` (go install), `lua-language-server`
-  and `rust-analyzer` (pacman), `pyright`/`ts_ls` (npm via `asdf.sh`). Telescope needs `fd`/`ripgrep`,
+- nvim bootstraps `lazy.nvim` on first launch. LSP servers: `gopls` and `pyright`/`ts_ls` (via
+  `asdf.sh`), `lua-language-server` and `rust-analyzer` (pacman). Telescope needs `fd`/`ripgrep`,
   git integration uses `lazygit`, the `+` register needs `wl-clipboard`, and `<leader>a` launches
   `opencode`.
 - Tool versions (asdf, gcloud) are pinned to what the profile was written against; packages track
