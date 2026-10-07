@@ -11,7 +11,7 @@ install() {
     fi
 }
 
-install golang golang 1.24.1
+install go golang 1.24.1
 install helm helm 3.16.0
 install kubectl kubectl 1.22.0
 install node nodejs 25.0.0
