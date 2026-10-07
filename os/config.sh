@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-# One of: arch/gnome
-
 set -e
+
+# One of: arch/gnome
 
 if [[ $# -eq 1 ]]; then
   [ -d "./$1/root/etc" ] && sudo cp --backup --recursive ./$1/root/etc/* /etc

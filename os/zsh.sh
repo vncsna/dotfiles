@@ -5,7 +5,7 @@ set -e
 ZSH_CUSTOM="$HOME/.config/zsh/oh-my-zsh-custom"
 
 if [[ ! "$SHELL" == *"zsh"* ]]; then
-    chsh -s $(which zsh) $USER
+    chsh --shell $(which zsh) $USER
 fi
 
 if [[ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]]; then
