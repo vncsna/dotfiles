@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-# One of: arch/gnome and arch/sway
+# One of: arch/gnome
 
 set -e
 
