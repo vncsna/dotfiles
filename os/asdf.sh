@@ -16,3 +16,7 @@ install helm helm 3.16.0
 install kubectl kubectl 1.22.0
 install node nodejs 25.0.0
 install python python 3.13.11
+
+# Language servers distributed via npm (node is installed above)
+"$HOME/.asdf/shims/npm" install --global pyright typescript typescript-language-server
+asdf reshim nodejs

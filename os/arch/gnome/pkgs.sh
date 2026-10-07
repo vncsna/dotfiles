@@ -13,21 +13,30 @@ paru --sync --quiet --needed --noconfirm \
     "discord" \
     "docker" \
     "docker-compose" \
+    "fd" \
     "fzf" \
     "git" \
     "git-lfs" \
     "github-cli" \
     "kubectx" \
+    "lazygit" \
+    "lua-language-server" \
     "man-db" \
     "man-pages" \
     "neovim" \
     "pgcli" \
     "postgresql" \
     "redis" \
+    "ripgrep" \
+    "rust" \
+    "rust-analyzer" \
     "sqlite" \
     "terraform" \
     "terragrunt" \
     "tldr" \
+    "tree-sitter-cli" \
+    "unzip" \
+    "wl-clipboard" \
     "zsh"
 
 paru --sync --quiet --needed --noconfirm \
