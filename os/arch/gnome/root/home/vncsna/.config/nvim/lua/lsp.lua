@@ -8,8 +8,6 @@ function M.on_attach(client, bufnr)
     vim.keymap.set('n', lhs, rhs, { buffer = bufnr, desc = desc })
   end
 
-  map('gd', vim.lsp.buf.definition, 'Go to definition')
-
   if client:supports_method('textDocument/formatting') then
     map('<leader>f', function()
       vim.lsp.buf.format({ bufnr = bufnr })
