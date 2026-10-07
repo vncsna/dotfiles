@@ -9,7 +9,6 @@ paru --sync --quiet --needed --noconfirm \
     "bitwarden-cli" \
     "bluez" \
     "bluez-utils" \
-    "calibre" \
     "dbeaver" \
     "discord" \
     "docker" \
@@ -19,7 +18,6 @@ paru --sync --quiet --needed --noconfirm \
     "git-lfs" \
     "github-cli" \
     "kubectx" \
-    "litecli" \
     "man-db" \
     "man-pages" \
     "neovim" \
@@ -27,7 +25,6 @@ paru --sync --quiet --needed --noconfirm \
     "postgresql" \
     "redis" \
     "sqlite" \
-    "telegram-desktop" \
     "terraform" \
     "terragrunt" \
     "tldr" \
@@ -37,9 +34,7 @@ paru --sync --quiet --needed --noconfirm \
     "asdf-vm" \
     "cursor-bin" \
     "google-chrome" \
-    "insomnia-bin" \
     "oh-my-zsh-git" \
     "slack-desktop" \
-    "stremio" \
     "visual-studio-code-bin" \
     "zotero-bin"
