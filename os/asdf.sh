@@ -25,3 +25,7 @@ asdf reshim nodejs
 # go language server; go auto-downloads the toolchain gopls needs to build
 "$HOME/.asdf/shims/go" install golang.org/x/tools/gopls@v0.23.0
 asdf reshim golang
+
+# Python tooling installed into the asdf-managed interpreter
+"$HOME/.asdf/shims/python" -m pip install --quiet pytest==9.0.3 ruff==0.15.13 poetry==2.3.1
+asdf reshim python

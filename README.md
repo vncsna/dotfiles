@@ -13,7 +13,7 @@ cd dotfiles/os
 ./arch/gnome/pkgs.sh        # pacman + AUR packages
 ./config.sh arch/gnome      # deploy the profile's root/ tree into /
 ./zsh.sh                    # zsh login shell + oh-my-zsh plugins
-./asdf.sh                   # runtimes (go, helm, kubectl, node, pnpm, python) + npm language servers
+./asdf.sh                   # runtimes (go, helm, kubectl, node, pnpm, python) + LSPs and Python tooling
 ./docker.sh                 # Docker daemon + user group
 ./git.sh                    # global git identity and defaults
 ./gcloud.sh                 # optional; then: gcloud components install gke-gcloud-auth-plugin
