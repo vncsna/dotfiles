@@ -27,7 +27,6 @@ paru --sync --quiet --needed --noconfirm \
     "opencode" \
     "pgcli" \
     "postgresql" \
-    "redis" \
     "ripgrep" \
     "rust" \
     "rust-analyzer" \
@@ -46,6 +45,7 @@ paru --sync --quiet --needed --noconfirm \
     "cursor-bin" \
     "google-chrome" \
     "oh-my-zsh-git" \
+    "redis" \
     "slack-desktop" \
     "visual-studio-code-bin" \
     "zotero-bin"
